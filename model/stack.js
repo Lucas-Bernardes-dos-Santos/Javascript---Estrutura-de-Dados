@@ -48,3 +48,7 @@ function Stack() {
   }
   //#endregion
 }
+
+module.exports = {
+  Stack
+}
