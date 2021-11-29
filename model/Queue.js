@@ -7,6 +7,7 @@ function Queue() {
   //#region Métodos Publicos
   this.enqueue = _element => {
     items[count] = _element
+    count++
   }
 
   this.dequeue = () => {
@@ -49,10 +50,14 @@ function Queue() {
 
     let objString = `${items[first]}`
 
-    for (let i = 0; i < count; i++) {
-      objString = `${objString}${items[i]}`
+    for (let i = first + 1; i < count; i++) {
+      objString = `${objString} - ${items[i]}`
     }
     return objString
   }
   //#endregion
+}
+
+module.exports = {
+  Queue
 }
