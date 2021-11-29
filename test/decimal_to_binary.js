@@ -17,5 +17,3 @@ function decToBin(_decNumber) {
 
   return stack.toString()
 }
-
-console.log(decToBin(7))
