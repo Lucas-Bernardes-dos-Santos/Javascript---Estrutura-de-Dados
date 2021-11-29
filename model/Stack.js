@@ -10,8 +10,9 @@ function Stack() {
   }
 
   this.pop = () => {
-    if(this.isEmpty())
+    if(this.isEmpty()){
       return undefined
+    }
     
     this.count--
     let result = items[count]
@@ -24,25 +25,33 @@ function Stack() {
   this.isEmpty = () => count === 0
 
   this.peek = () => {
-    if(this.isEmpty())
+    if(this.isEmpty()){
       return undefined
+    }
 
     items[count - 1]
   }
 
   this.clear = () => {
-    while(!this.isEmpty())
+    if(this.isEmpty()){
+      return 'Pilha está vazia'
+    }
+
+    while(!this.isEmpty()) {
       this.pop()
+    }
   }
 
   this.toString = () => {
-    if(this.isEmpty())
+    if(this.isEmpty()) {
       return ''
+    }
     
     let objString = `${items[0]}`
 
-    for(let i = 0; i < count; i++)
+    for(let i = 0; i < count; i++){
       objString = `${objString}${items[i]}`
+    }
 
     return objString
   }
