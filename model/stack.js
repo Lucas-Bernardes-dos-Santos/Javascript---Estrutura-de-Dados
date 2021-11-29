@@ -42,7 +42,7 @@ function Stack() {
     let objString = `${items[0]}`
 
     for(let i = 0; i < count; i++)
-      objString = `${objString}, ${items[i]}`
+      objString = `${objString}${items[i]}`
 
     return objString
   }
