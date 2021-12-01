@@ -29,7 +29,7 @@ function Stack() {
       return undefined
     }
 
-    items[count - 1]
+    return items[count - 1]
   }
 
   this.clear = () => {

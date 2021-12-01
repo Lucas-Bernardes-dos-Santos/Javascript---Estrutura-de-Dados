@@ -28,7 +28,7 @@ function Queue() {
       return undefined
     }
 
-    items[first]
+    return items[first]
   }
 
   this.size = () => count - first
