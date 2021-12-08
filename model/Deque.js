@@ -36,7 +36,7 @@ function Deque() {
       return undefined
     }
     
-    this.count--
+    count--
     let result = items[count]
     delete items[count]
     return result
@@ -82,10 +82,10 @@ function Deque() {
       return ''
     }
     
-    let objString = `${items[this.front()]}`
+    let objString = `{${items[first]}}`
 
     for(let i = first + 1; i < count; i++){
-      objString = `${objString}${items[i]}`
+      objString = `${objString} - {${items[i]}}`
     }
     return objString
   }
