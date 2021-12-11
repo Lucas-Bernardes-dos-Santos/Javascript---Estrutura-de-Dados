@@ -80,25 +80,51 @@ function LinkedList() {
     }
     return false
   }
+
+  this.indexOf = _element => {
+    let current = head
+    for (let i = 0; (i < count) && (current != null); i++) {
+      if(this.equals(_element, current.element)) {
+        return i
+      }    
+      current = current.next
+    }
+    return -1
+  }
+
+  this.remove = _element => {
+    let index = this.indexOf(_element)
+    return this.removeAt(index)
+  }
+
+  this.size = () => count
+
+  this.isEmpty = () => this.size() === 0
+
+  this.getHead = () => head
+
+  this.clear = () => {
+    while(head != null) {
+      this.remove(head.element)
+    }
+  }
+
+  this.toString = () => {
+    if(head == null) {
+      return ''
+    }
+
+    let objString = `${head.element}`
+    let current = head.next
+    while(current != null) {
+      objString = `${objString} - ${current.element}`
+      current = current.next
+    }
+    return objString
+  }
   //#endregion
 }
 
-const ListaEncadead = new LinkedList()
-
-ListaEncadead.push(0)
-ListaEncadead.push(1)
-ListaEncadead.push(2)
-ListaEncadead.push(3)
-ListaEncadead.push(4)
-
-console.log(ListaEncadead.removeAt(3))
-console.log(ListaEncadead.removeAt(0))
-
-console.log(ListaEncadead.getNodeAt(0))
-console.log(ListaEncadead.getNodeAt(1))
-console.log(ListaEncadead.getNodeAt(2))
-
-console.log(ListaEncadead.pushAt(0, 0))
-console.log(ListaEncadead.pushAt(3, 3))
-console.log(ListaEncadead.pushAt(5, 5))
-console.log(ListaEncadead.pushAt(1.5, 2))
+module.exports = {
+  LinkedList
+}
