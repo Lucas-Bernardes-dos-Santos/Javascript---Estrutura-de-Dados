@@ -1,6 +1,6 @@
 function Node(_element) {
-  let element = _element
-  let next = undefined
+  this.element = _element
+  this.next = undefined
 }
 
 module.exports = {
