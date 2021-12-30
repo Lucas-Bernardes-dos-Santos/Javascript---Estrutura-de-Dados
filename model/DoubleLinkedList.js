@@ -7,7 +7,7 @@ function DoubleLinkedList() {
   let tail = new DoubleNode.DoubleNode()
 
   //#region Métodos Públicos
-  this.equals = (_a, _b) => _a === _b
+  this.equals = (_elementA, _elementB) => _elementA === _elementB
 
   this.push = _element => {
     const doubleNode = new DoubleNode.DoubleNode(_element)
@@ -122,6 +122,34 @@ function DoubleLinkedList() {
     return undefined
   }
 
+  this.indexOf = _element => {
+    let current = head
+    for (let i = 0; (i < count) && (current != null); i++) {
+      if(this.equals(_element, current.element)) {
+        return i
+      }    
+      current = current.next
+    }
+    return -1
+  }
+
+  this.remove = _element => {
+    let index = this.indexOf(_element)
+    return this.removeAt(index)
+  }
+
+  this.size = () => count
+
+  this.isEmpty = () => this.size() === 0
+
+  this.getHead = () => head
+
+  this.clear = () => {
+    while(head != null) {
+      this.remove(head.element)
+    }
+  }
+
   this.toString = () => {
     if(head.element === undefined) {
       return ''
@@ -137,13 +165,3 @@ function DoubleLinkedList() {
   }
   //#endregion
 }
-
-let doubleLinkedList = new DoubleLinkedList()
-
-doubleLinkedList.push(0)
-doubleLinkedList.pushAt(1, 1)
-doubleLinkedList.pushAt(1, 0.5)
-doubleLinkedList.push(2)
-doubleLinkedList.push(3)
-
-console.log(doubleLinkedList.toString())
