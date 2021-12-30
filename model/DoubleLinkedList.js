@@ -9,6 +9,22 @@ function DoubleLinkedList() {
   //#region Métodos Públicos
   this.equals = (_a, _b) => _a === _b
 
+  this.push = _element => {
+    const doubleNode = new DoubleNode.DoubleNode(_element)
+    let current = doubleNode
+
+    if(head.element === undefined) {
+      head = doubleNode
+      tail = doubleNode
+    }
+    else {
+      tail.next = doubleNode
+      doubleNode.previous = tail
+      tail = doubleNode
+    }
+    count++
+  }
+
   this.pushAt = (_index, _element) => {
     if(_index >= 0 && _index <= count) {
       // Criando um nó com o elemento passado
@@ -58,7 +74,7 @@ function DoubleLinkedList() {
   }
 
   this.removeAt = _index => {
-    if(_index >= 0 && _index < count) {
+    if(_index >= 0 && _index <= count) {
       let current = head
 
       // Remover o primeiro elemento
@@ -105,18 +121,29 @@ function DoubleLinkedList() {
     }
     return undefined
   }
+
+  this.toString = () => {
+    if(head.element === undefined) {
+      return ''
+    }
+
+    let objString = `${head.element}`
+    let current = head.next
+    while(current != null) {
+      objString = `${objString} - ${current.element}`
+      current = current.next
+    }
+    return objString
+  }
   //#endregion
 }
 
 let doubleLinkedList = new DoubleLinkedList()
 
-doubleLinkedList.pushAt(0, 0)
+doubleLinkedList.push(0)
 doubleLinkedList.pushAt(1, 1)
 doubleLinkedList.pushAt(1, 0.5)
+doubleLinkedList.push(2)
+doubleLinkedList.push(3)
 
-console.log(doubleLinkedList.getNodeAt(0))
-console.log(doubleLinkedList.getNodeAt(1))
-console.log(doubleLinkedList.getNodeAt(2))
-
-doubleLinkedList.removeAt(1)
-console.log(doubleLinkedList.getNodeAt(1))
+console.log(doubleLinkedList.toString())
