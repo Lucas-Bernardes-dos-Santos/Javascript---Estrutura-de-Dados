@@ -1,15 +1,15 @@
-const Node = require('./Node')
+import Node from './Node.js'
 
-function LinkedList() {
+export default function LinkedList() {
   // Atributos Privados
   let count = 0
-  let head = new Node.Node()
+  let head = new Node()
 
   //#region Métodos Públicos
   this.equals = (_a, _b) => _a === _b
 
   this.push = _element => {
-    const node = new Node.Node(_element)
+    const node = new Node(_element)
     let current = node
 
     if(head.element === undefined) {
@@ -62,7 +62,7 @@ function LinkedList() {
 
   this.pushAt = (_element, _index) => {
     if(_index >= 0 && _index <= count) {
-      const node = new Node.Node(_element)
+      const node = new Node(_element)
 
       if(_index === 0){
         let current = head
@@ -123,8 +123,4 @@ function LinkedList() {
     return objString
   }
   //#endregion
-}
-
-module.exports = {
-  LinkedList
 }

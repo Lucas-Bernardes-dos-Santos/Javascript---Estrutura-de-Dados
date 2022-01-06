@@ -1,6 +1,6 @@
-const LinkedList = require('../model/Linked List')
+import LinkedList from '../model/Linked List.js'
 
-const ListaEncadead = new LinkedList.LinkedList()
+const ListaEncadead = new LinkedList()
 
 console.log(ListaEncadead.isEmpty())
 

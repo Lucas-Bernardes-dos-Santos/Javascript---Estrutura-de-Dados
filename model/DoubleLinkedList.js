@@ -1,16 +1,16 @@
-const DoubleNode = require('./DoubleNode')
+import DoubleNode from './DoubleNode.js'
 
-function DoubleLinkedList() {
+export default function DoubleLinkedList() {
   // Atributos Privados
   let count = 0
-  let head = new DoubleNode.DoubleNode()
-  let tail = new DoubleNode.DoubleNode()
+  let head = new DoubleNode()
+  let tail = new DoubleNode()
 
   //#region Métodos Públicos
   this.equals = (_elementA, _elementB) => _elementA === _elementB
 
   this.push = _element => {
-    const doubleNode = new DoubleNode.DoubleNode(_element)
+    const doubleNode = new DoubleNode(_element)
     let current = doubleNode
 
     if(head.element === undefined) {
@@ -28,7 +28,7 @@ function DoubleLinkedList() {
   this.pushAt = (_index, _element) => {
     if(_index >= 0 && _index <= count) {
       // Criando um nó com o elemento passado
-      const doubleNode = new DoubleNode.DoubleNode(_element)
+      const doubleNode = new DoubleNode(_element)
 
       // Recebendo o endereço do primeiro elemento
       let current = head
