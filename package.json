@@ -1,0 +1,23 @@
+{
+  "name": "estrutura-de-dados-js",
+  "version": "1.0.0",
+  "description": "Treinamento de Estrutura de Dados e Algoritmos usando a linguagem Javascript",
+  "main": "index.js",
+  "type": "module",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas-Bernardes-dos-Santos/Javascript---Estrutura-de-Dados.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas-Bernardes-dos-Santos/Javascript---Estrutura-de-Dados/issues"
+  },
+  "homepage": "https://github.com/Lucas-Bernardes-dos-Santos/Javascript---Estrutura-de-Dados#readme"
+}

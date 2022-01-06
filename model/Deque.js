@@ -1,4 +1,4 @@
-function Deque() {
+export default function Deque() {
   // Atributos Privados
   let count = 0
   let first = 0 
@@ -90,8 +90,4 @@ function Deque() {
     return objString
   }
   //#endregion
-}
-
-module.exports = {
-  Deque
 }
