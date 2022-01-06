@@ -1,4 +1,4 @@
-function Queue() {
+export default function Queue() {
   // Atributos Privados
   let count = 0
   let first = 0
@@ -56,8 +56,4 @@ function Queue() {
     return objString
   }
   //#endregion
-}
-
-module.exports = {
-  Queue
 }

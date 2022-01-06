@@ -1,5 +1,6 @@
-const Queue = require('../model/Queue')
-const queue = new Queue.Queue()
+import Queue from '../model/Queue.js'
+
+const queue = new Queue()
 
 console.log(`Vazia? ${queue.isEmpty()}`)
 
