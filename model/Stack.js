@@ -1,4 +1,4 @@
-function Stack() {
+export default function Stack() {
   // Atributos Privados
   let count = 0
   let items = {}
@@ -49,15 +49,11 @@ function Stack() {
     
     let objString = `${items[0]}`
 
-    for(let i = 0; i < count; i++){
+    for(let i = 1; i < count; i++){
       objString = `${objString}${items[i]}`
     }
 
     return objString
   }
   //#endregion
-}
-
-module.exports = {
-  Stack
 }

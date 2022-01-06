@@ -1,10 +1,10 @@
-const Stack = require("../model/stack")
+import Stack from '../model/Stack.js'
 
 function decToBin(_decNumber) {
   if(_decNumber === 0 )
     return 0
 
-  const stack = new Stack.Stack()
+  const stack = new Stack()
   
   let decimal = _decNumber
   let resto
